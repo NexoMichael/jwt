@@ -61,7 +61,7 @@ DQJ8SA18nhH0Zh6HaxUAsFwsa37Fp82rVJvnWJfHgwU
 
 ## Requirements
 
-jwt-cli package requires Go >= 1.5.
+jwt-cli package requires Go >= 1.9
 
 
 ## Copyright

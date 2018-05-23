@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"fmt"
+	"os"
 	"testing"
 	"time"
 
@@ -65,8 +66,13 @@ func TestTryParseTime(t *testing.T) {
 }
 
 func TestMain(t *testing.T) {
+	orig := os.Stdout
+	_, w, _ := os.Pipe()
+	os.Stdout = w
+
 	defer func() {
 		require.Nil(t, recover())
 	}()
 	main()
+	os.Stdout = orig
 }
