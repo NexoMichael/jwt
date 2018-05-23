@@ -87,7 +87,7 @@ func (t token) tryParseTime(key string) string {
 	return time.Unix(int64(val), 0).Format(time.RFC822)
 }
 
-// eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+// parseToken parses JWT token string into token object
 func parseToken(tokenString string) (token, error) {
 	var t token
 	parts := strings.Split(tokenString, ".")
