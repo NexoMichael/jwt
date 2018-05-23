@@ -1,4 +1,4 @@
-package main // import "github.com/NexoMichael/jwt-cli"
+package main // import "github.com/NexoMichael/jwt"
 
 import (
 	"encoding/base64"
@@ -12,10 +12,10 @@ import (
 	"github.com/pkg/errors"
 )
 
-var helpMsg = `jwt-cli - command line JWT token parser
+var helpMsg = `jwt - command line JWT token parser
 
 Usage:
-    jwt-cli [encoded token]
+    jwt [encoded token]
 `
 
 func main() {

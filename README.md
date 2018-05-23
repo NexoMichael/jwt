@@ -23,11 +23,13 @@ Command line JWT token parser written in Golang
 
 `jwt` is command line tool for parsing [JSON Web Tokens](http://jwt.io/) (JWT)
 
+Inspired by [NodeJS implementation](https://github.com/troyharvey/jwt-cli) by @troyharvey.
+
 ## Installation
 
 Use the `go` command:
 
-	$ go get -u github.com/NexoMichael/jwt-cli
+	$ go get -u github.com/NexoMichael/jwt
 
 
 ## Usage
