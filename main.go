@@ -11,11 +11,11 @@ import (
 	"time"
 )
 
+// nolint: gochecknoglobals
 var helpMsg = `jwt - command line JWT token parser
 
 Usage:
-    jwt [encoded token]
-`
+    jwt [encoded token]`
 
 func main() {
 	jwtcli(os.Stdout, os.Args)

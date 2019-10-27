@@ -1,0 +1,66 @@
+run:
+  tests: true
+  skip-dirs-use-default: true
+
+linters-settings:
+  lll:
+    line-length: 150
+
+  gocritic:
+    enabled-checks:
+      - builtinShadow
+      - importShadow
+      - nestingReduce
+
+linters:
+  disable-all: true
+  enable:
+    - bodyclose
+    - deadcode
+    - depguard
+    - dogsled
+    - dupl
+    - errcheck
+    - funlen
+    - gochecknoinits
+    - goconst
+    - gocritic
+    - gocyclo
+    - gofmt
+    - goimports
+    - golint
+    - gosec
+    - gosimple
+    - govet
+    - ineffassign
+    - interfacer
+    - lll
+    - misspell
+    - nakedret
+    - scopelint
+    - staticcheck
+    - structcheck
+    - stylecheck
+    - typecheck
+    - unconvert
+    - unparam
+    - unused
+    - varcheck
+    - whitespace
+    - gochecknoglobals
+    - gocognit
+    - godox
+    - maligned
+    - prealloc    
+  fast: false
+
+issues:
+  exclude-rules:
+    # Exclude lll issues for long lines with go:generate
+    - source: "^//go:generate "
+      linters:
+        - lll
+
+  exclude-use-default: false
+  max-issues-per-linter: 0
+  max-same-issues: 0

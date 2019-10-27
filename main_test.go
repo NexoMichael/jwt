@@ -39,7 +39,9 @@ func TestParseToken(t *testing.T) {
 	iat := time.Unix(1516239022, 0).Format(time.RFC822)
 	nbf := time.Unix(1516249022, 0).Format(time.RFC822)
 	exp := time.Unix(1516259022, 0).Format(time.RFC822)
+	// nolint:lll
 	jwtcli(&b, []string{"", "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IlRlc3QgVG9rZW4iLCJpYXQiOjE1MTYyMzkwMjIsIm5iZiI6MTUxNjI0OTAyMiwiZXhwIjoxNTE2MjU5MDIyfQ.DQJ8SA18nhH0Zh6HaxUAsFwsa37Fp82rVJvnWJfHgwU"})
+	// nolint:lll
 	require.Equal(t, fmt.Sprintf("\x1b[32m\n✻ Header\n{\n\t\"alg\": \"HS256\",\n\t\"typ\": \"JWT\"\n}\n\x1b[33m\n✻ Body\n{\n\t\"exp\": 1516259022,\n\t\"iat\": 1516239022,\n\t\"name\": \"Test Token\",\n\t\"nbf\": 1516249022,\n\t\"sub\": \"1234567890\"\n}\n\x1b[90mIssued at: %s\nNot before: %s\nExpires at: %s\n\x1b[31m\n✻ Signature\nDQJ8SA18nhH0Zh6HaxUAsFwsa37Fp82rVJvnWJfHgwU\n\x1b[0m", iat, nbf, exp), b.String())
 }
 
