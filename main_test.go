@@ -13,7 +13,7 @@ import (
 func TestHelpMessage(t *testing.T) {
 	var b bytes.Buffer
 	jwtcli(&b, []string{})
-	require.Equal(t, "jwt - command line JWT token parser\n\nUsage:\n    jwt [encoded token]\n\n", b.String())
+	require.Equal(t, "jwt - command line JWT token parser\n\nUsage:\n    jwt [encoded token]\n", b.String())
 }
 
 func TestBadToken(t *testing.T) {
