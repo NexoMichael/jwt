@@ -1,12 +1,10 @@
 # jwt
 
-[![BuildStatus Widget]][BuildStatus Result]
+
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2FNexoMichael%2Fjwt%2Fbadge&style=flat)](https://actions-badge.atrox.dev/NexoMichael/shortuuid/jwt)
 [![CodeCovWidget]][CodeCovResult]
 [![GoReport Widget]][GoReport Status]
 [![GoDoc Widget]][GoDoc Link]
-
-[BuildStatus Result]: https://travis-ci.org/NexoMichael/jwt
-[BuildStatus Widget]: https://travis-ci.org/NexoMichael/jwt.svg?branch=master
 
 [GoReport Status]: https://goreportcard.com/report/github.com/NexoMichael/jwt
 [GoReport Widget]: https://goreportcard.com/badge/github.com/NexoMichael/jwt
@@ -61,7 +59,7 @@ DQJ8SA18nhH0Zh6HaxUAsFwsa37Fp82rVJvnWJfHgwU
 
 ## Requirements
 
-jwt-cli package requires Go >= 1.9
+jwt-cli package requires Go >= 1.13
 
 
 ## Copyright
