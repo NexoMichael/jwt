@@ -3,13 +3,12 @@ package main // import "github.com/NexoMichael/jwt"
 import (
 	"encoding/base64"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"os"
 	"strings"
 	"time"
-
-	"github.com/pkg/errors"
 )
 
 var helpMsg = `jwt - command line JWT token parser
@@ -96,11 +95,11 @@ func parseToken(tokenString string) (token, error) {
 	}
 
 	if err := parsePart(&t.header, parts[0]); err != nil {
-		return t, errors.Wrap(err, "failed to parse token header")
+		return t, fmt.Errorf("failed to parse token header: %v", err)
 	}
 
 	if err := parsePart(&t.body, parts[1]); err != nil {
-		return t, errors.Wrap(err, "failed to parse token body")
+		return t, fmt.Errorf("failed to parse token body: %v", err)
 	}
 
 	t.signature = parts[2]
@@ -119,11 +118,11 @@ func decodePart(part string) ([]byte, error) {
 func parsePart(dst interface{}, part string) (err error) {
 	var src []byte
 	if src, err = decodePart(part); err != nil {
-		return errors.Wrap(err, "failed to decode token part")
+		return fmt.Errorf("failed to decode token part: %v", err)
 	}
 
 	if err = json.Unmarshal(src, dst); err != nil {
-		return errors.Wrap(err, "failed to unmarshal token part")
+		return fmt.Errorf("failed to unmarshal token part: %v", err)
 	}
 	return nil
 }
